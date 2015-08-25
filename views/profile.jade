@@ -1,0 +1,18 @@
+//- profile.jade
+extends ./layout.jade
+
+block content
+  p
+    a(href="/logout") Logout
+
+  h1 Profile
+  p Hi, #{user.displayName}
+
+  if(user.emails && user.emails.length)
+    h2 Emails:
+    ul
+      each email in user.emails
+        li= email.value
+
+  if(user.photos && user.photos[0])
+    img(src="#{user.photos[0].value}")
