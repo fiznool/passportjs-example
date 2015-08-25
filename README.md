@@ -42,3 +42,10 @@ The login page can now be accessed at `http://localhost:3000`.
 
 `foreman` will automatically make any variables defined in `.env` available as an environment variable, accessible via `process.env.<KEY>`. Therefore, it will pick up the client ID and secret that were added above, which will then be read by the passport configuration.
 
+## OAuth 2.0 Flow Diagram
+
+The following diagram describes the flow of data in this OAuth 2.0 handshake.
+
+Notice that the client secret is never exposed to the browser. It is transferred server-server once an initial short-lived token has been acquired.
+
+![oauth2_flow](https://cloud.githubusercontent.com/assets/820863/9470689/03ae05b8-4b45-11e5-9db7-910d3cfa5146.png)
