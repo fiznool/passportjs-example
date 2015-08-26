@@ -2,5 +2,8 @@
 extends ./layout.jade
 
 block content
-  h1 Login
-  a(class="button", href="/auth/google") Login with Google
+  .login-page
+    h1 Login
+    a(class="login-control-google", href="/auth/google")
+      img(src="/button-gplus.png", alt="Google Logo")
+      p Login with Google

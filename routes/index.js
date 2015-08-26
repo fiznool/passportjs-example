@@ -1,7 +1,7 @@
 'use strict';
 
 var ensureAuthenticated = function(req, res, next) {
-  if (req.isAuthenticated()) {
+  if(req.isAuthenticated()) {
     return next();
   }
 
@@ -16,14 +16,15 @@ module.exports = function(app, passport) {
 
   app.get('/profile', ensureAuthenticated, function(req, res) {
     res.render('profile', {
-        user : req.user // get the user out of session and pass to template
+      user : req.user // get the user out of session and pass to template
     });
   });
 
   // route for google authentication and login
   app.get('/auth/google',
       passport.authenticate('google', {
-        scope : ['profile', 'email']
+        scope : ['profile', 'email'],
+        approvalPrompt: 'force'
       }));
 
   // handle the callback after google has authenticated the user

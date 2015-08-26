@@ -1,12 +1,10 @@
 'use strict';
 
-var express = require('express'),
-    passport = require('passport');
+var passport = require('passport');
 
 // Configure passport and express
-var app = express();
 require('./config/passport')(passport);
-require('./config/express')(app, passport);
+var app = require('./config/express')(passport);
 
 // Setup routes
 require('./routes')(app, passport);

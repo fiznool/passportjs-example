@@ -1,6 +1,7 @@
 'use strict';
 
-var path = require('path'),
+var express = require('express'),
+    path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
@@ -8,12 +9,17 @@ var path = require('path'),
 /**
  * Express configuration
  */
-module.exports = function(app, passport) {
+module.exports = function(passport) {
+  var app = express();
+
   app.use(morgan('dev')); // log every request to the console
   app.use(cookieParser()); // read cookies (needed for auth)
   app.use(bodyParser.urlencoded({  // get information from html forms
     extended: true
   }));
+
+  // Serve up CSS and images
+  app.use(express.static(path.join(__dirname, '../public')));
 
   // view engine setup
   app.set('views', path.join(__dirname, '../views'));
@@ -27,4 +33,6 @@ module.exports = function(app, passport) {
   }));
   app.use(passport.initialize());
   app.use(passport.session()); // persistent login sessions
+
+  return app;
 };

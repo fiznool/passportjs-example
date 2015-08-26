@@ -3,16 +3,14 @@ extends ./layout.jade
 
 block content
   p
-    a(href="/logout") Logout
+    a(href="/logout" class="btn btn-primary btn-logout") Logout
 
-  h1 Profile
-  p Hi, #{user.displayName}
+  h1.profile-title Profile
+  .clearfix.profile-upper
+    if(user.photos && user.photos[0])
+      img(src="#{user.photos[0].value}", class="profile-pic")
+    p.lead.profile-name Hi, #{user.displayName}
 
-  if(user.emails && user.emails.length)
-    h2 Emails:
-    ul
-      each email in user.emails
-        li= email.value
-
-  if(user.photos && user.photos[0])
-    img(src="#{user.photos[0].value}")
+  if(user.emails && user.emails[0])
+    .well.well-sm Your email address is&nbsp;
+      a(href="mailto:#{user.emails[0].value}") #{user.emails[0].value}

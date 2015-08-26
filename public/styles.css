@@ -1,0 +1,43 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #e7e7e7;
+}
+
+.login-page {
+  text-align: center;
+}
+
+.login-control-google {
+    display: block;
+    margin: 30px auto;
+    width: 140px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.btn-logout {
+  float: right;
+  margin-top: 10px;
+}
+
+.profile-title {
+  margin-bottom: 25px;
+}
+
+.profile-upper {
+  margin: 15px 0;
+}
+
+.profile-name {
+  margin-top: 10px;
+}
+
+.profile-pic {
+  float: left;
+  margin: 0 15px 0 10px;
+  border-radius: 5px;
+}

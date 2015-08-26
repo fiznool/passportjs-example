@@ -49,3 +49,7 @@ The following diagram describes the flow of data in this OAuth 2.0 handshake.
 Notice that the client secret is never exposed to the browser. It is transferred server-server once an initial short-lived token has been acquired.
 
 ![oauth2_flow](https://cloud.githubusercontent.com/assets/820863/9470689/03ae05b8-4b45-11e5-9db7-910d3cfa5146.png)
+
+## Further Reading
+
+- https://scotch.io/tutorials/easy-node-authentication-setup-and-local
